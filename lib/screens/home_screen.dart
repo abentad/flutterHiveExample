@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterHiveExample/providers/userDataProvider.dart';
+import 'package:flutterHiveExample/screens/detail_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -79,7 +80,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         int.parse(_userBudgetController.text),
                         int.parse(_userGoalController.text),
                       );
-                      _userDataProvider.saveUserData();
+                      // _userDataProvider.setisSignedUp(true);
+                      // print('isSignedUp set to true');
+                      //will route to the detail screen
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => DetailScreen(),
+                        ),
+                      );
                     }
                   },
                   shape: RoundedRectangleBorder(
