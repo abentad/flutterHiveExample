@@ -15,6 +15,16 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController _userGoalController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     UserDataProvider _userDataProvider = Provider.of<UserDataProvider>(context);
 
@@ -69,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         int.parse(_userBudgetController.text),
                         int.parse(_userGoalController.text),
                       );
-                      // _userDataProvider.saveUserData();
+                      _userDataProvider.saveUserData();
                     }
                   },
                   shape: RoundedRectangleBorder(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterHiveExample/models/userDataModel.dart';
 import 'package:flutterHiveExample/providers/userDataProvider.dart';
 import 'package:flutterHiveExample/screens/home_screen.dart';
 import 'package:hive/hive.dart';
@@ -11,6 +12,8 @@ void main() async {
   final appDocumentDirectory =
       await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
+  //this will use the UserDataModelAdapter that we generated
+  Hive.registerAdapter(UserDataModelAdapter());
   //this will open the userData hive box
   await Hive.openBox("userData");
   runApp(

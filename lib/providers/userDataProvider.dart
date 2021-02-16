@@ -20,6 +20,7 @@ class UserDataProvider with ChangeNotifier {
   //hive stuff
   void saveUserData() {
     userDataBox.add(_userData);
+    print('successfully Saved');
   }
 
   //closes all boxes of hive
